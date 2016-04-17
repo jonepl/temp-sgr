@@ -1,0 +1,63 @@
+<section class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="pull-right" data-dismiss="modal"><span id="modal-close">&times;</span></button>
+          <h3 class="modal-title">{{modalHeader}}</h3>
+        </div>
+        <div class="modal-body">
+          <p>{{modalBody}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" ng-click="modalMethod()" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Guests</h1>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search" ng-change="figureOutItemsToDisplay()" />
+      </div>
+    </div>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="user in pagedItems" class="list-group-item">
+
+      <!-- Approve the user -->
+      <button type="button"
+              class="btn btn-success pull-right"
+              data-toggle="modal"
+              data-target="#myModal"
+              ng-click="setModalInformation('Confirmation', 'Are you sure you want to approve this user, granting them user privileges?', user, approve)">
+              <span class="glyphicon glyphicon-ok"></span> Approve</button>
+
+      <!-- Deny the user -->
+      <button type="button"
+              class="btn btn-danger pull-right"
+              data-toggle="modal"
+              data-target="#myModal"
+              ng-click="setModalInformation('Confirmation', 'Are you sure you want to deny this user, deleting their account?', user, deny)">
+              <span class="glyphicon glyphicon-remove"></span> Deny</button>
+
+      <!-- Get user info -->
+      <button type="button" class="btn btn-primary pull-right" ng-click="info(user);">
+        <span class="glyphicon glyphicon-search"></span> Info
+      </button>
+
+      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
+      <p class="list-group-item-text" ng-bind="user.email"></p>
+      <p ng-if="!user.email" class="list-group-item-text">(no email provided)</p>
+    </a>
+  </div>
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+</section>

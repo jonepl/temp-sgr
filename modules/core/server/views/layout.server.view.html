@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <base href="/">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="fragment" content="!">
+
+  <!-- Apple META -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- Facebook META -->
+  <meta property="fb:app_id" content="{{facebookAppId}}">
+  <meta property="og:site_name" content="{{title}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="{{logo}}">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter META -->
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:url" content="{{url}}">
+  <meta name="twitter:image" content="{{logo}}">
+
+  <!-- jQuery and Bootstrapjs-->
+  <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+  <!-- Fav Icon -->
+  <link href="{{favicon}}" rel="shortcut icon" type="image/x-icon">
+
+  <!-- Application CSS Files -->
+  {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+</head>
+
+<body class="ng-cloak">
+  <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+  <section class="content">
+    <section class="">
+      {% block content %}{% endblock %}
+    </section>
+  </section>
+
+  <!--Embedding The User Object-->
+  <script type="text/javascript">
+    var user = {{ user | json | safe }};
+  </script>
+
+  <!--Load The Socket.io File-->
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+
+  <!--Application JavaScript Files-->
+  {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
+
+<!-- Angular Feeds - Google API-->
+  <script type="text/javascript" src="https://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22feeds%22%2C%22version%22%3A%221.0%22%2C%22nocss%22%3Atrue%7D%5D%7D"></script>
+
+  <!-- Angular Feeds - Files -->
+  <script src="http://siddii.github.io/angular-feeds/app/angular-feeds/angular-feeds.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  {% if livereload %}
+  <!--Livereload script rendered -->
+  <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
+  {% endif %}
+  <footer class="footer-align">
+    <hr/>
+    <div class="container">
+       <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Sigma Gamma Rho</span>
+          </div>
+          <div class="col-md-4">
+             <ul class="list-inline social-buttons">
+                <li><a href="https://twitter.com/sgrhoupdates/status/253878018810970114"><i class="fa fa-twitter fa-lg"></i></a>
+                </li>
+                <li><a href="https://www.facebook.com/SGRhoNE/"><i class="fa fa-facebook fa-lg"></i></a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/sigma-gamma-rho-sorority-inc-82642891"><i class="fa fa-linkedin fa-lg"></i></a>
+                </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+             <ul class="list-inline">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+             </ul>
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--Load The Socket.io File-->
+  <script type="text/javascript" src="modules/users/client/js/users.js"></script>
+
+  <!--Load The Socket.io File-->
+  <script type="text/javascript" src="modules/chat/client/js/chat.js"></script>
+
+
+</body>
+</html>

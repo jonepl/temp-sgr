@@ -1,0 +1,52 @@
+.chat-message {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.chat-message:not(:first-child) {
+  border-top: 1px solid #e7e7e7;
+}
+.chat-message-details {
+  margin-left: 10px;
+}
+.chat-profile-image {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+}
+
+.chat-wrapper{
+  display: block;
+  height: inherit;
+  border-radius: 25px;
+  border: 2px solid #f2f2f2;
+  height: 480px;
+}
+
+.text-area{
+  height: inherit;
+  overflow-y: scroll;
+  padding-top: 20px;
+  max-height: 350px;
+}
+.feed-area{
+  height: inherit;
+  overflow-y: scroll;
+  padding-top: 20px;
+  max-height: 350px;
+}
+
+.news-wrapper{
+  display: block;
+  height: 480px;
+  border-radius: 25px;
+  border: 2px solid #f2f2f2;
+}
+
+.title{
+  padding: 0px;
+  margin: 0px;
+}
+
+.inline-block{
+  display: inline-block;
+}

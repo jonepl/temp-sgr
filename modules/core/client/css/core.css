@@ -1,0 +1,112 @@
+/*Change these to edit the color of the navbar*/
+.navbar-inverse{
+  background-image: -webkit-linear-gradient(top, #002366 0%, #011133 100%) !important;
+  background-image: -o-linear-gradient(top, #002366 0%, #011133 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#002366), to(#011133));
+  background-image: linear-gradient(to bottom, #002366 0%, #011133 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002366', endColorstr='#ff011133', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-radius: 4px;
+}
+/*Change these to edit the color of the navbar text and brand*/
+.navbar-nav > li > a, #sgr-gold, .navbar-brand {
+  color: #998100 !important;
+}
+
+.modal-footer, .modal-header{
+  background-image: -webkit-linear-gradient(top, #002366 0%, #011133 100%) !important;
+  background-image: -o-linear-gradient(top, #002366 0%, #011133 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#002366), to(#011133));
+  background-image: linear-gradient(to bottom, #002366 0%, #011133 100%);
+}
+.modal-title{
+  color: #998100
+}
+.modal-close{
+  color: black !important;
+}
+
+
+.content {
+  margin-top: 50px;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+
+/************* From Old Site ***************/
+
+#home-video{
+  display: block;
+  width: 80%;
+  height: 400px;
+  margin: 0 auto;
+  border: 0;
+}
+
+#home-info{
+  text-align: center;
+}
+
+.home-slider{
+  margin-top:2px;
+  margin-bottom: 50px;
+  max-height: 600px;
+}
+
+
+.element-padding{
+  padding-bottom: 20px;
+}
+section{
+   min-height: 530px
+}
+
+/* Footer */
+footer{
+  padding-top: 2%;
+  text-align: center;
+}
+
+footer li{
+  padding-top: 5px;
+}
+
+/*********************************/
+
+.event-scroller{
+  max-height: 450px;
+  overflow-y: scroll;
+}
